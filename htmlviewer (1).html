@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>THE PANDEMIC</title>
+    <style>
+      body {
+        background: url('https://raw.githubusercontent.com/djos0007/asgn2-HD/main/4050931.jpg') no-repeat;
+        background-size: cover;
+        font-family: 'Open Sans', sans-serif;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .page {
+        background: url('https://raw.githubusercontent.com/djos0007/asgn2-HD/main/v871-techi-11.jpg') no-repeat;
+        background-size: cover;
+        margin: 0 auto;
+        max-width: 800px;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        font-size: 36px;
+        text-align: center;
+        background: url('https://raw.githubusercontent.com/djos0007/asgn2-HD/main/v871-techi-11.jpg') no-repeat;
+        background-size: cover;
+        color: #fff;
+        padding: 20px;
+        margin: -20px;
+        border-radius: 5px 5px 0 0;
+      }
+
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        border-radius: 5px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .description {
+        margin: 20px 0;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        font-family: 'Amasis MT Pro', sans-serif;
+      }
+
+      .description h2 {
+        font-size: 24px;
+        color: #333;
+      }
+
+      .vis-container {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <h1>THE PANDEMIC</h1>
+      <div class="description">
+        <p>COVID-19, caused by the novel coronavirus SARS-CoV-2, has profoundly impacted the global landscape since its emergence in late 2019. This visualization provides a concise overview of the pandemic's key metrics and trends. Through compelling data representations, it aims to illustrate the virus's spread, infection rates, vaccination progress, and the societal changes it has prompted. By presenting this information visually, we can better understand the virus's trajectory, the effectiveness of public health measures, and the efforts made to combat it. This visualization offers a snapshot of our world's ongoing battle against COVID-19, encapsulating the challenges and resilience displayed by individuals and communities worldwide.</p>
+      </div>
+      <!-- Viz-1 -->
+      <div class="description">
+        <h2>The Map</h2>
+        <div class="vis-container" id="viz1"></div>
+        <p>This visualization aims to show the COVID-19 stats in different countries and how many lives were affected because of this deadly virus. After moving the mouse over the map, all the different countries are highlighted and colored according to per 10,000 confirmed cases.</p>
+      </div>
+      <!-- Viz-2 -->
+      <div class="description">
+        <h2>The Recovered(%) vs Total Deaths(%)</h2>
+        <div class="vis-container" id="viz2"></div>
+        <p>This visualization aims to show all the different countries and how they differ in the number of people recovered vs dead from the pandemic. Pinch in or out to have a closer look at the scatter plot and change the x-axis accordingly.</p>
+      </div>
+      <!-- Viz-3 -->
+      <div class="description">
+        <h2>Affecting Major Countries</h2>
+        <div class="vis-container" id="viz3"></div>
+        <p>This visualization was mainly aimed to show the drastic effects of the Pandemic on Major Countries of the World.</p>
+      </div>
+      <!-- Viz-4 -->
+      <div class="description">
+        <h2>Total Cases vs Total Deaths</h2>
+        <div class="vis-container" id="viz4"></div>
+        <p>In this visualization, different continents are taken into consideration to compare the Total Cases noted which weren't able to recover. The Bandwidth and the resolve can be changed to zoom in and view the chart in a more understandable manner.</p>
+      </div>
+    </div>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <script type="text/javascript">
+      var specViz1 = "https://raw.githubusercontent.com/djos0007/asgn2-HD/main/visualization.vl%20(1).json";
+      var specViz2 = "https://raw.githubusercontent.com/djos0007/asgn2-HD/main/visualization.vl%20(2).json";
+      var specViz3 = "https://raw.githubusercontent.com/djos0007/asgn2-HD/main/visualization.vl%20(3).json";
+      var specViz4 = "https://raw.githubusercontent.com/djos0007/asgn2-HD/main/visualization.vg(4).json";
+      vegaEmbed('#viz1', specViz1, {
+        "actions": false
+      });
+      vegaEmbed('#viz2', specViz2, {
+        "actions": false
+      });
+      vegaEmbed('#viz3', specViz3, {
+        "actions": false
+      });
+      vegaEmbed('#viz4', specViz4, {
+        "actions": false
+      });
+    </script>
+  </body>
+</html>
