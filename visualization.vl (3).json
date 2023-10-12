@@ -1,0 +1,39 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Total COVID-19 Cases for Major Countries",
+  "description": "COVID-19 Data for Major Countries",
+  "data": {
+    "url": "https://raw.githubusercontent.com/djos0007/asgn2-HD/main/worldometer_data.csv"
+  },
+  "transform": [
+    {
+      "filter": {
+        "field": "Country/Region",
+        "oneOf": [
+          "USA",
+          "Australia",
+          "Japan",
+          "China",
+          "Canada",
+          "Germany",
+          "New Zealand",
+          "United Kingdom",
+          "Netherlands",
+          "India",
+          "Greenland"
+        ]
+      }
+    }
+  ],
+  "mark": {"type": "bar", "opacity": 0.7},
+  "encoding": {
+    "x": {"field": "Country/Region", "type": "nominal", "sort": "-y"},
+    "y": {
+      "field": "TotalCases",
+      "type": "quantitative",
+      "title": "Total Cases"
+    },
+    "color": {"field": "Continent", "type": "nominal", "title": "Continent"}
+  },
+  "config": {}
+}

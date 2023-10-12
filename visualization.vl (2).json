@@ -1,0 +1,73 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Covid-19 Stats[Based on Confirmed Cases in Different Countries]",
+  "description": "Interactive Bubble Chart with COVID-19 Data (Based on Confirmed Cases)",
+  "data": {
+    "url": "https://raw.githubusercontent.com/djos0007/asgn2-HD/main/country_wise_latest.csv"
+  },
+  "width": 800,
+  "height": 500,
+  "mark": {"type": "circle", "filled": true, "opacity": 0.7},
+  "encoding": {
+    "x": {
+      "field": "Recovered / 100 Cases",
+      "type": "quantitative",
+      "scale": {"domain": [0, 100], "nice": true},
+      "title": "Recovered (%)"
+    },
+    "y": {
+      "field": "Deaths / 100 Cases",
+      "type": "quantitative",
+      "scale": {"domain": [0, 10], "nice": true},
+      "title": "Deaths (%)"
+    },
+    "size": {
+      "field": "Confirmed",
+      "type": "quantitative",
+      "scale": {"type": "sqrt", "range": [0, 3000]},
+      "title": "Confirmed Cases"
+    },
+    "color": {
+      "field": "Country/Region",
+      "type": "nominal",
+      "scale": {"scheme": "category20b"},
+      "title": "Country"
+    },
+    "tooltip": [
+      {"field": "Country/Region", "type": "nominal", "title": "Country"},
+      {
+        "field": "Confirmed",
+        "type": "quantitative",
+        "title": "Confirmed Cases"
+      },
+      {"field": "Deaths", "type": "quantitative", "title": "Deaths"},
+      {"field": "Recovered", "type": "quantitative", "title": "Recovered"},
+      {"field": "Active", "type": "quantitative", "title": "Active Cases"},
+      {
+        "field": "Deaths / 100 Cases",
+        "type": "quantitative",
+        "title": "Deaths (%)"
+      },
+      {
+        "field": "Recovered / 100 Cases",
+        "type": "quantitative",
+        "title": "Recovered (%)"
+      }
+    ]
+  },
+  "selection": {
+    "highlight": {"type": "single", "empty": "none", "on": "mouseover"},
+    "selectConfirmed": {
+      "type": "interval",
+      "bind": "scales",
+      "encodings": ["x"],
+      "name": "Select Confirmed Cases Range"
+    }
+  },
+  "transform": [
+    {
+      "filter": "datum['Deaths / 100 Cases'] <= 10 && datum['Recovered / 100 Cases'] <= 100"
+    }
+  ],
+  "config": {}
+}
