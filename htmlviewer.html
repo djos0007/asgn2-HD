@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>THE PANDEMIC</title>
+    <style>
+      body {
+        background: url('https://raw.githubusercontent.com/djos0007/asgn2-HD/main/4333042.jpg') no-repeat;
+        background-size: cover;
+        font-family: 'Times New Roman', sans-serif;
+        color: #333;
+        line-height: 1.6;
+      }
+      .page {
+        background: url('https://raw.githubusercontent.com/djos0007/asgn2-HD/main/v871-techi-11.jpg') no-repeat;
+        background-size: cover;
+        margin: 0 auto;
+        max-width: 800px;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        font-size: 36px;
+        text-align: center;
+        background: url('https://raw.githubusercontent.com/djos0007/asgn2-HD/main/v871-techi-11.jpg') no-repeat;
+        background-size: cover;
+        background: red;
+        color: #fff;
+        padding: 20px;
+        margin: -20px;
+        border-radius: 5px 5px 0 0;
+      }
+      
+      /* Style for visualization headings */
+      .viz-heading {
+        background: #FF4242; /* Dark blue background */
+        color: #fff; /* White font color */
+        padding: 10px;
+      }
+
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        border-radius: 5px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .description {
+        margin: 20px 0;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        font-family: 'Times New Roman', sans-serif;
+      }
+
+      .description h2 {
+        font-size: 24px;
+        color: #333;
+      }
+
+      .vis-container {
+        max-width: 100%;
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .column {
+        flex: 50%;
+        padding: 10px;
+      }
+
+      .column img {
+        margin: 0;
+      }
+
+      .column .description {
+        order: 1;
+      }
+
+      .column .vis-container {
+        order: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <h1>THE PANDEMIC</h1>
+      <div class="description">
+        <p>The COVID-19 pandemic, caused by the novel coronavirus SARS-CoV-2, has been a transformative global event that has gripped the world since its emergence in late 2019. This highly contagious and initially mysterious virus has fundamentally altered our way of life, healthcare systems, and economies. COVID-19 has exposed the vulnerabilities of our interconnected world, underlining the importance of public health measures, scientific research, and international cooperation. From unprecedented lockdowns to the rapid development of vaccines, it has forced societies to adapt and innovate at an extraordinary pace. The pandemic has raised critical questions about preparedness for future global health crises and the importance of collective action to mitigate the impact of such events.</p> 
+
+         <p>Through the following visualizations, the aim is to deliver useful information regarding the Recovered, Active cases as well as Deaths back in 2020 with special focus on the situation in Australia.</p>
+      </div>
+      
+      <!-- Viz-1 (Original Layout) -->
+      <div class="description">
+        <h2 class="viz-heading">The Map</h2>
+        <div class="vis-container" id="viz1"></div>
+        <p>The Map Visualization displays information regarding COVID-19 statistics in different countries of the world. The darker the shade of orange the more confirmed cases/10,000 individuals of COVID-19 were found.</p>
+        <p>Greenland, Syria, and Mozambique seem to hold the highest rank amongst all having maximum cases throughout.</p>
+        <p>But, how many of these people recovered and how many died out of these Confirmed cases in the world?</p>
+      </div>
+      
+      <!-- Viz-2 (Original Layout) -->
+      <div class="description">
+        <h2 class="viz-heading">The Recovered(%) vs Total Deaths(%)</h2>
+        <div class="vis-container" id="viz2"></div>
+        <p>The Scatter plot compares the number of recovered and number of deaths in different countries of the world and the size is based on the number of confirmed individuals which can be viewed clearly with the zoom-in interactivity.</p>
+
+       <p>The Highest amount in all three scenarios (Recovered,Confirmed and Dead) seems to be in Brazil,USA,Russia and India.</p>
+
+       <p>Millions have been infected, and sadly, many lives were lost, with unique stories of resilience and tragedy. As of September 2021, confirmed cases exceeded 220 million, with over 4.5 million reported deaths.long-term effects on recovered individuals, known as "long COVID," have raised concerns, affecting the quality of life. The pandemic serves as a stark reminder of the fragility of global health systems and the necessity for collective efforts in preventing and managing such crises.</p>
+
+        <p>Lets see how many total Cases were reported in the Major Countries of the World.</p>
+      </div>
+      
+      <!-- Viz-3 (Two-Column Layout) -->
+<div class="row">
+  <div class="column">
+    <div class="description">
+      <h2 class="viz-heading">Affecting Major Countries</h2>
+      <p>In the Presented Bar Chart, the highest Cases reported were in the USA followed by India.</p>
+
+      <p>In the United States, over 36 million cases and 800,000 deaths have been reported, disrupting lives and healthcare systems. Unique to the USA, the pandemic laid bare healthcare disparities, with higher infection and mortality rates among marginalized communities.</p>
+
+      <p>India, with over 30 million cases, faced a catastrophic second wave, revealing a severe healthcare infrastructure strain. The economic downturn hit hard; millions lost jobs in both nations, with India's unemployment rate surging to 23.5%. Access to education, mental health, and gender-based violence also suffered.</p>
+
+      <p>Comparatively, Australia showed an extremely low value in the number of cases, perhaps due to advanced healthcare facilities and appropriate follow-up of lockdown rules and regulations.</p>
+
+      <p>But what about the deaths caused on the basis of these total cases around the world?</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="vis-container" id="viz3"></div>
+  </div>
+</div>
+
+<!-- Add the image below the 3rd visualization -->
+<div class="row">
+  <div class="column">
+    <img src="https://raw.githubusercontent.com/djos0007/asgn2-HD/main/img-chartjunk.png" alt="Chartjunk Image" style="max-width: 100%; height: auto;">
+  </div>
+</div>
+
+      
+      <!-- Viz-4 (Original Layout) -->
+      <div class="description">
+        <h2 class="viz-heading">Total Cases vs Total Deaths</h2>
+        <div class="vis-container" id="viz4"></div>
+        <p>This interactive visualisation with adjustable bandwidth and resolve aims to compare the total deaths led by the total Cases in different Continents of the world.</p>
+
+        <p>The Comparison shows the highest number of Total Deaths in comparison to Total Cases in South America and North America.</p>
+
+        <p>As of September 2021:</p>
+
+        <p>In North America (including the United States and Canada):</p>
+            <p>- Total COVID-19 cases: Approximately 53 million.</p>
+            <p>- Total COVID-19 deaths: Approximately 1.1 million.</p>
+
+        <p>In South America (including countries like Brazil, Argentina, and Peru):</p>
+            <p>- Total COVID-19 cases: Approximately 49 million.</p>
+            <p>- Total COVID-19 deaths: Approximately 1.4 million.</p>
+
+        <p>Now,lets see what was the situation in Australia before and after lockdown.</p>
+      </div>
+      
+      <!-- New Title and Visualizations -->
+      <h1>COVID-19 IN AUSTRALIA</h1>
+      
+      <!-- Viz-5 (Two-Column Layout) -->
+      <div class="row">
+        <div class="column">
+          <div class="description">
+            <h2 class="viz-heading">Confirmed Cases in Australia</h2>
+            <p>The given Visualisation shows the Evolution of Confirmed cases mainly following through the process of Before and after Lockdown from Jan,2020 to Apr,2020.</p>
+
+            <p>In Australia,the lockdown was announced in the month of March and went on for almost 263 days.As we can see over here there was a major increase in the number of confirmed cases from jan to April wherein it significantly went from 0 to 6000 in just a span of 4 motnhs.</p>
+
+            <p>As of now there are about 11,781,641 COVID-19 cases in australia.</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="vis-container" id="viz5"></div>
+         <a href="https://github.com/djos0007/asgn2-HD/blob/main/chhartjunk-2.png" target="_blank">
+          <img src="https://raw.githubusercontent.com/djos0007/asgn2-HD/main/chhartjunk-2.png" alt="Chartjunk Image" style="max-width: 100%; height: auto;">
+        </a> 
+        </div>
+      </div>
+      
+      <!-- Viz-6 (Two-Column Layout) -->
+      <div class="row">
+        <div class="column">
+          <div class="vis-container" id="viz6"></div>
+        </div>
+        <div class="column">
+          <div class="description">
+            <h2 class="viz-heading">Active Cases in Australia</h2>
+            <p>The given Visualisation shows the Evolution of Active cases mainly following through the process of Before and after Lockdown from Jan,2020 to May,2020.</p>
+
+            <p>As we can see over here there was a major increase in the number of Active cases from Jan to May wherein it was more of a heap like change in the number of Active cases wherein it went up immensely in April,2020 and then started dropping and then went down considerably by Mayy,2020. There is high chance that the the lockdowns and healthcare services really helped Australia in dealing with COVID-19.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Viz-7 (Two-Column Layout) -->
+      <div class="row">
+        <div class="column">
+          <div class="description">
+            <h2 class="viz-heading">Deaths in Australia</h2>
+            <p>The given Visualisation shows the Evolution of number of Deaths mainly following through the process of Before and after Lockdown from Jan,2020 to May,2020.</p>
+
+            <p>The visualisation shows that there was a major increase in the number of deaths in Australia which means that not many people diagonsed with COVID-19 were able to recover at that time due to severity.</p>
+
+            <p>As of now the number of deaths in Australia is about 22,837 with recovery number 11,753,611 which seems really good when compared with the Total Confirmed COVID-19 cases.</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="vis-container" id="viz7"></div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <script type="text/javascript">
+      var specViz1 = "https://raw.githubusercontent.com/djos0007/asgn2-HD/main/visualization.vl%20(1)-1.json";
+      var specViz2 = "https://raw.githubusercontent.com/djos0007/asgn2-HD/main/visualization.vl%20(2)-1.json";
+      var specViz3 = "https://raw.githubusercontent.com/djos0007/asgn2-HD/main/visualization.vl%20(3).json";
+      var specViz4 = "https://raw.githubusercontent.com/djos0007/asgn2-HD/main/visualization.vg%20(4)-1.json";
+      var specViz5 = "https://raw.githubusercontent.com/djos0007/asgn2-HD/main/visualization.vl%20(5).json"; 
+      var specViz6 = "https://raw.githubusercontent.com/djos0007/asgn2-HD/main/visualization.vl%20(6).json"; 
+      var specViz7 = "https://raw.githubusercontent.com/djos0007/asgn2-HD/main/visualization.vl%20(7).json"; 
+      vegaEmbed('#viz1', specViz1, {
+        "actions": false
+      });
+      vegaEmbed('#viz2', specViz2, {
+        "actions": false
+      });
+      vegaEmbed('#viz3', specViz3, {
+        "actions": false
+      });
+      vegaEmbed('#viz4', specViz4, {
+        "actions": false
+      });
+      vegaEmbed('#viz5', specViz5, {
+        "actions": false
+      });
+      vegaEmbed('#viz6', specViz6, {
+        "actions": false
+      });
+      vegaEmbed('#viz7', specViz7, {
+        "actions": false
+      });
+    </script>
+    
+    <!-- Add hyperlink and text at the bottom of the center page -->
+    <div class="description" style="text-align: center;">
+      <p>Want to get more information and recent updates?</p>
+      <a href="https://ourworldindata.org/covid-cases" target="_blank">Visit : https://ourworldindata.org/covid-cases</a>
+    </div>
+  </body>
+</html>
+  
