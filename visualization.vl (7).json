@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Number of COVID-19 Deaths in Australia",
+  "description": "Number of Deaths over time in Australia",
+  "data": {
+    "url": "https://raw.githubusercontent.com/djos0007/asgn2-HD/main/COVID-19%20DATASET.csv",
+    "format": {"type": "csv", "parse": {"ObservationDate": "date:'%m/%d/%Y'"}}
+  },
+  "transform": [{"filter": "datum.Confirmed < 7000"}],
+  "encoding": {
+    "x": {
+      "field": "ObservationDate",
+      "type": "temporal",
+      "timeUnit": "yearmonthdate",
+      "title": "Observation Date",
+      "axis": {"labelAngle": -90}
+    },
+    "y": {"field": "Deaths", "type": "quantitative", "title": "Deaths"},
+    "color": {"field": "Australia", "type": "nominal", "title": "Deaths"}
+  },
+  "layer": [
+    {"mark": "line"},
+    {
+      "params": [
+        {
+          "name": "hover",
+          "select": {"type": "point", "on": "mouseover", "clear": "mouseout"}
+        }
+      ],
+      "mark": {"type": "circle", "tooltip": true},
+      "encoding": {
+        "opacity": {
+          "condition": {"test": {"param": "hover", "empty": false}, "value": 1},
+          "value": 0
+        },
+        "size": {
+          "condition": {
+            "test": {"param": "hover", "empty": false},
+            "value": 48
+          },
+          "value": 100
+        }
+      }
+    }
+  ],
+  "width": 300,
+  "height": 200,
+  "config": {}
+}
